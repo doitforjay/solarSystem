@@ -1,0 +1,186 @@
+html{
+	background: url("http://wallpapercave.com/wp/pEeUsp1.jpg");
+}
+body{
+  height: 100%;
+  top: 0px;
+  bottom: 0px;
+}
+@keyframes sunspin {
+	0% {transform: rotate(0);}
+	100% {transform: rotate(360deg);}
+}
+@keyframes shadow{
+	0% {background-position: 130% 0%;}
+	49% {background-position: 50% 0%;}
+	50% {background-position: 0% 0%;}
+	80% {background-position: -50% 0%;}
+	100% {background-position: -50% 0%;}
+}
+@keyframes mercuryOrbit{
+	0% {z-index: 2; transform: rotateY(0);}
+	49% {z-index: 2;}
+	50% {z-index: -2;}
+	80% {z-index: -2;}
+	100% {z-index: 2; transform: rotateY(360deg);}
+
+}
+@keyframes venusOrbit{
+	0% {z-index: 3; transform: rotateY(0);}
+	49% {z-index: 3;}
+	50% {z-index: -3;}
+	99% {z-index: -3;}
+	100% {z-index: 3; transform: rotateY(360deg);}
+}
+@keyframes earthOrbit{
+	0% {z-index: 4; transform: rotateY(0);}
+	49% {z-index: 4;}
+	50% {z-index: -4;}
+	99% {z-index: -4;}
+	100% {z-index: 4; transform: rotateY(360deg);}
+}
+@keyframes marsOrbit{
+	0% {z-index: 5; transform: rotateY(0);}
+	49% {z-index: 5;}
+	50% {z-index: -5;}
+	99% {z-index: -5;}
+	100% {z-index: 5; transform: rotateY(360deg);}
+}
+@keyframes stationary {
+	from {transform: rotateY(0);}
+	to { transform: rotateY(-360deg); }
+}
+.sun{
+	width: 250px;
+	position: absolute;
+	top: -200px;
+	z-index: 1;
+	height: 525px; 
+}
+.sun .star{
+	width: 400px;
+	height: 450px;
+	background: url("http://pre10.deviantart.net/c764/th/pre/f/2011/264/1/e/a_sun_by_ephemeralblue-d4aibvk.png") no-repeat;
+	background-size: cover;
+	border-radius: 200px;
+	margin: 0 auto;
+	animation: sunspin 80s infinite linear; 
+}
+
+.mercury{
+	width: 650px;
+	left: 70px;
+	position: absolute;
+	z-index: 2;
+	animation: mercuryOrbit 15s infinite linear;
+
+}
+.mercury .planet{
+	width: 35px;
+	height: 35px;
+	background: url("http://www.solarsystemscope.com/nexus/content/planet_images/render_mercury.png") no-repeat;
+	background-size: cover;
+	animation-iteration-count: infinite;
+	animation: stationary 15s infinite linear;
+
+}
+.venus{
+	width: 900px;
+	position: absolute;
+	z-index: 3;
+	animation: venusOrbit 20s infinite linear;
+
+}
+.venus .planet{
+	width: 45px;
+	height: 45px;
+	background: url("http://vignette2.wikia.nocookie.net/dumbledoresarmyroleplay/images/d/dc/Venus.png/revision/latest?cb=20120527010129");
+	background-size: cover;
+	animation-iteration-count: infinite;
+	animation: stationary 20s infinite linear;
+}
+.earth{
+	width: 1000px;
+	position: absolute;
+	z-index: 4;
+	animation: earthOrbit 30s infinite linear;
+
+}
+.earth .planet{
+	width: 100px;
+	height: 100px;
+	background: url("https://upload.wikimedia.org/wikipedia/commons/5/5c/1_Earth_(blank_2).png");
+	background-size: cover;
+	animation-iteration-count: infinite;
+	animation: stationary 30s infinite linear;
+}
+.mars{
+	width: 1300px;
+	position: absolute;
+	z-index: 5;
+	animation: marsOrbit 40s infinite linear;
+
+}
+.mars .planet{
+	width: 75px;
+	height: 75px;
+	background: url("http://vignette2.wikia.nocookie.net/factfinder/images/c/c5/Mars-1-.png/revision/latest?cb=20130916161813");
+	background-size: cover;
+	animation-iteration-count: infinite;
+	animation: stationary 40s infinite linear;
+}
+.solarSystem:hover > div{
+	animation-play-state: paused;
+}
+.solarSystem:hover .planet{
+	animation-play-state: paused;
+}
+.mercury:hover{
+
+}
+.mars:hover{
+	
+}
+.venus:hover{
+	
+}
+.earth:hover{
+	
+}
+.solarSystem{
+	position: relative;
+	margin: 0 auto;
+	display: block;
+	margin-top: 500px;
+	perspective: 1000px;
+	perspective-origin: 60% 50%;
+	transform: rotate(-10deg);
+}
+.solarSystem > div{
+	position: relative;
+	margin: 0 auto;
+	/*margin-top: 200px;*/
+	transform-style: preserve-3d;
+	height: 0px;
+}
+.tooltip {
+	position: relative;
+/*    display: inline-block;*/
+    /*border-bottom: 1px dotted black;*/
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
