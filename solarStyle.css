@@ -1,29 +1,53 @@
 html{
 	background: url("http://wallpapercave.com/wp/pEeUsp1.jpg");
+	background-size: cover;
+	background-attachment: fixed; 
+	overflow-x: hidden; 
+	overflow-y: hidden; 
 }
+
 body{
   height: 100%;
   top: 0px;
   bottom: 0px;
 }
+
+/*h1{
+	color: coral;
+	text-align: center;
+	font-size: 55px;
+	font-weight: 900;
+	padding-top: 80px;
+	margin-left: 10%;
+}*/
+@keyframes title{
+	0% {opacity: 1;}
+	30% {opacity: 0;}
+}
+@keyframes shootingStar{
+	0% {transform: translateX(-10px) translateY(-10px) scale(-1,1); z-index:-10;}
+	100% {transform: translateX(860px) translateY(760px) scale(-1,1); z-index:-10;}
+}
+@keyframes shootingStar2{
+	0% {transform: translateX(550px) translateY(-150px) scale(-1,1); z-index:-10;}
+	100% {transform: translateX(1560px) translateY(760px) scale(-1,1); z-index:-10;}
+}
+@keyframes shootingStar3{
+	0% {transform: translateX(750px) translateY(-600px) scale(-1,1); z-index:-10;}
+	100% {transform: translateX(2060px) translateY(760px) scale(-1,1); z-index:-10;}
+}
+
 @keyframes sunspin {
 	0% {transform: rotate(0);}
 	100% {transform: rotate(360deg);}
 }
-@keyframes shadow{
-	0% {background-position: 130% 0%;}
-	49% {background-position: 50% 0%;}
-	50% {background-position: 0% 0%;}
-	80% {background-position: -50% 0%;}
-	100% {background-position: -50% 0%;}
-}
+
 @keyframes mercuryOrbit{
 	0% {z-index: 2; transform: rotateY(0);}
 	49% {z-index: 2;}
 	50% {z-index: -2;}
 	80% {z-index: -2;}
 	100% {z-index: 2; transform: rotateY(360deg);}
-
 }
 @keyframes venusOrbit{
 	0% {z-index: 3; transform: rotateY(0);}
@@ -46,34 +70,95 @@ body{
 	99% {z-index: -5;}
 	100% {z-index: 5; transform: rotateY(360deg);}
 }
+@keyframes jupiterOrbit{
+	0% {z-index: 6; transform: rotateY(0);}
+	49% {z-index: 6;}
+	50% {z-index: -6;}
+	99% {z-index: -6;}
+	100% {z-index: 6; transform: rotateY(360deg);}
+}
+@keyframes saturnOrbit{
+	0% {z-index: 7; transform: rotateY(0);}
+	49% {z-index: 7;}
+	50% {z-index: -7;}
+	99% {z-index: -7;}
+	100% {z-index: 7; transform: rotateY(360deg);}
+}
+@keyframes uranusOrbit{
+	0% {z-index: 8; transform: rotateY(0);}
+	49% {z-index: 8;}
+	50% {z-index: -8;}
+	99% {z-index: -8;}
+	100% {z-index: 8; transform: rotateY(360deg);}
+}
+@keyframes neptuneOrbit{
+	0% {z-index: 9; transform: rotateY(0);}
+	49% {z-index: 9;}
+	50% {z-index: -9;}
+	99% {z-index: -9;}
+	100% {z-index: 9; transform: rotateY(360deg);}
+}
 @keyframes stationary {
 	from {transform: rotateY(0);}
 	to { transform: rotateY(-360deg); }
 }
+.solar{
+	color: coral;
+	text-align: center;
+	font-size: 420%;
+	font-weight: 900;
+	margin-left: 8%;
+	top: 50px;
+	animation: title 5s infinite linear;
+}
+.star{
+	width: 130px;
+	height: 130px;
+	position: absolute;
+	animation: shootingStar 3s infinite ease-out;
+	background: url("https://www.starregister.org/images/shooting-star-big.png");
+	background-size: cover;
+}
+.star2{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	animation: shootingStar2 4s infinite linear;
+	animation-delay: 2s;
+	background: url("https://www.starregister.org/images/shooting-star-big.png");
+	background-size: cover;
+}
+.star3{
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	animation: shootingStar3 2s infinite linear;
+/*	animation-delay: 2s;*/
+	background: url("https://www.starregister.org/images/shooting-star-big.png");
+	background-size: cover;
+}
 .sun{
 	width: 250px;
 	position: absolute;
-	top: -200px;
+	top: -150px;
 	z-index: 1;
-	height: 525px; 
+	height: 525px;
 }
 .sun .star{
-	width: 400px;
-	height: 450px;
+	width: 300px;
+	height: 350px;
 	background: url("http://pre10.deviantart.net/c764/th/pre/f/2011/264/1/e/a_sun_by_ephemeralblue-d4aibvk.png") no-repeat;
 	background-size: cover;
 	border-radius: 200px;
 	margin: 0 auto;
-	animation: sunspin 80s infinite linear; 
+	animation: sunspin 80s infinite linear;
 }
-
 .mercury{
 	width: 650px;
 	left: 70px;
 	position: absolute;
 	z-index: 2;
 	animation: mercuryOrbit 15s infinite linear;
-
 }
 .mercury .planet{
 	width: 35px;
@@ -82,14 +167,12 @@ body{
 	background-size: cover;
 	animation-iteration-count: infinite;
 	animation: stationary 15s infinite linear;
-
 }
 .venus{
-	width: 900px;
+	width: 880px;
 	position: absolute;
 	z-index: 3;
 	animation: venusOrbit 20s infinite linear;
-
 }
 .venus .planet{
 	width: 45px;
@@ -104,11 +187,10 @@ body{
 	position: absolute;
 	z-index: 4;
 	animation: earthOrbit 30s infinite linear;
-
 }
 .earth .planet{
-	width: 100px;
-	height: 100px;
+	width: 50px;
+	height:50px;
 	background: url("https://upload.wikimedia.org/wikipedia/commons/5/5c/1_Earth_(blank_2).png");
 	background-size: cover;
 	animation-iteration-count: infinite;
@@ -119,15 +201,75 @@ body{
 	position: absolute;
 	z-index: 5;
 	animation: marsOrbit 40s infinite linear;
-
 }
 .mars .planet{
-	width: 75px;
-	height: 75px;
+	width: 30px;
+	height: 30px;
 	background: url("http://vignette2.wikia.nocookie.net/factfinder/images/c/c5/Mars-1-.png/revision/latest?cb=20130916161813");
 	background-size: cover;
 	animation-iteration-count: infinite;
 	animation: stationary 40s infinite linear;
+}
+.jupiter{
+	top: -90px;
+	width: 2000px;
+	position: absolute;
+	z-index: 6;
+	animation: jupiterOrbit 60s infinite linear;
+}
+.jupiter .planet{
+	width: 300px;
+	height: 300px;
+	background: url("http://space-facts.com/wp-content/uploads/jupiter-transparent.png");
+	background-size: cover;
+	animation-iteration-count: infinite;
+	animation: stationary 60s infinite linear;
+}
+.saturn{
+	top: -90px;
+	left: -400px;
+	width: 2400px;
+	position: absolute;
+	z-index: 7;
+	animation: saturnOrbit 75s infinite linear;
+}
+.saturn .planet{
+	width: 510px;
+	height: 250px;
+	background: url("http://real28.ru/vozrozhdeniye/images/planet-saturn.png");
+	background-size: cover;
+	animation-iteration-count: infinite;
+	animation: stationary 75s infinite linear;
+}
+.uranus{
+	left: -550px;
+	width: 2500px;
+	position: absolute;
+	z-index: 8;
+	animation: uranusOrbit 80s infinite linear;
+}
+.uranus .planet{
+	width: 180px;
+	height: 180px;
+	background: url("http://space-facts.com/wp-content/uploads/uranus-transparent.png");
+	background-size: cover;
+	animation-iteration-count: infinite;
+	animation: stationary 80s infinite linear;
+}
+.neptune{
+	left: -750px;
+	width: 2900px;
+	position: absolute;
+	z-index: 9;
+	animation: uranusOrbit 90s infinite linear;
+}
+.neptune .planet{
+	width: 185px;
+	height: 185px;
+	background: url("http://roseheid.com/astronomy/astronomyimages/56-57%20Neptune%20and%20Pluto/slides/neptuneink.png");
+	background-size: cover;
+	animation-iteration-count: infinite;
+	animation: stationary 90s infinite linear;
 }
 .solarSystem:hover > div{
 	animation-play-state: paused;
@@ -135,23 +277,12 @@ body{
 .solarSystem:hover .planet{
 	animation-play-state: paused;
 }
-.mercury:hover{
 
-}
-.mars:hover{
-	
-}
-.venus:hover{
-	
-}
-.earth:hover{
-	
-}
 .solarSystem{
 	position: relative;
 	margin: 0 auto;
 	display: block;
-	margin-top: 500px;
+	margin-top: 300px;
 	perspective: 1000px;
 	perspective-origin: 60% 50%;
 	transform: rotate(-10deg);
@@ -164,23 +295,23 @@ body{
 	height: 0px;
 }
 .tooltip {
-	position: relative;
-/*    display: inline-block;*/
-    /*border-bottom: 1px dotted black;*/
+	position: relative; /* display: inline-block;*/
+       /*border-bottom: 1px dotted black;*/
 }
 .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: white;
-    color: black;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
+	 font-weight:900;
+	 visibility: hidden;
+	 font-size: 20px;
+	 height:80px;
+    	 width: 200px;
+   	 background-color: Coral;
+   	 color: black;
+   	 border-radius: 6px;
+   	 padding: 5px 0;
+   	 /* Position the tooltip */
+   	 position: absolute;
+   	 z-index: 1;
 }
 .tooltip:hover .tooltiptext {
-    visibility: visible;
+   	 visibility: visible;
 }
